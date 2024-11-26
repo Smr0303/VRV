@@ -1,5 +1,5 @@
 <p align='center'>
-<b>A Project built as an Intern assignment for Flagright</b>
+<b>A Project built as an Intern assignment for VRV Security</b>
 </p>
 
 <p align='center'>
@@ -20,24 +20,25 @@
 
 ## 🧾 Project Description
 
-A comprehensive Transaction Management API that enables companies to manage, track, and analyze their transactions efficiently. The system supports role-based access control with different levels of permissions for administrators, CEOs, and employees and providing real time transaction analytics with summary reports and transaction generation
+A comprehensive Transaction Management API that enables companies to manage, track, and analyze their transactions efficiently. The system supports role-based access control with different levels of permissions for administrators, CEOs, and employees and providing real time transaction analytics with summary reports and transaction generation. The project is made to demonstrate the implementation of authentication using cookies and jwt token , and authorization by depicting role based access of users.
 
 ## 🧾 Key Assumptions
 
 - While using the project first login using Admin test credentials provided below as no seperate Admin dashboard is made . So users can register themselves as Admin or at other role using that account
-- The system is designed keeping in mind for a single company having employees with multiple roles (Admin, CEO, Employee, etc.)
-- Only company administrators have access to user registration and CRON job management
+- The system is designed keeping in mind for a single company having employees with multiple roles (Admin, CEO, Manager.)
+- Only company administrators have access to user registration.
+- Administrators and CEOs have privelege to create a transaction.
 - All other features are accessible to all authenticated users within the company
 - Transaction data follows the Flagright Docs Transaction schema with an additional description field
 
-## 🚀 Deployed Link Remember to login first using Admin credentials [Link](https://flag-right-assesment-w5np.vercel.app/)
+## 🚀 Deployed Link (Remember to login first using Admin credentials) [Link](https://vrv-assignment-five.vercel.app/)
 ## ✨ Features
 
 ### Core Features
 
 - [x] Create and Read operations for transactions
+- [x] Toggle the security implemented at frontend for testing purpose 
 - [x] Role-based access control
-- [x] Automated transaction generation via CRON job
 - [x] Search and filtering capabilities
 - [x] Transaction reporting and analytics
 - [x] Paginated responses for optimal performance
@@ -47,16 +48,14 @@ A comprehensive Transaction Management API that enables companies to manage, tra
 
 **Admin**
 - Full system access
-- User registration management
-- CRON job control (start/stop)
+- employee registration management
 - All transaction operations
 
-**Other Roles (CEO, Employees)**
-- View transactions
-- Create transactions
-- Search and filter transactions
-- Generate reports
-- Access dashboard
+**CEO**
+- All transaction operations except employee registration
+
+**Manager**
+- All operations except employee registration and create Transaction
 
 ### Authentication Management
 - [x] User with Admin rights can only register new employees
@@ -94,8 +93,8 @@ A comprehensive Transaction Management API that enables companies to manage, tra
 <thead>
   <tr>
     <th> </th>
-    <th colspan="1">User Management</th>
-    <th colspan="2">CRON Jobs</th>
+    <th colspan="1">Employee Management</th>
+    <th colspan="2">Security Button</th>
     <th colspan="4">Transactions</th>
     <th colspan="2">Reports</th>
   </tr>
@@ -104,8 +103,8 @@ A comprehensive Transaction Management API that enables companies to manage, tra
   <tr>
     <td></td>
     <td><b><u>Register</u></b></td>
-    <td><b><u>Start</u></b></td>
-    <td><b><u>Stop</u></b></td>
+    <td><b><u>Enhance</u></b></td>
+    <td><b><u>Reduce</u></b></td>
     <td><b><u>Create</u></b></td>
     <td><b><u>View</u></b></td>
     <td><b><u>Search</u></b></td>
@@ -126,11 +125,23 @@ A comprehensive Transaction Management API that enables companies to manage, tra
     <td>✔</td>
   </tr>
   <tr>
-    <td><b>Employee</b></td>
+    <td><b>CEO</b></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td><b>Manager</b></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>✔</td>
     <td>✔</td>
     <td>✔</td>
@@ -182,24 +193,6 @@ A comprehensive Transaction Management API that enables companies to manage, tra
    ```javascript
    npm run build
    ```
-### 🚀 Running the Frontend Using Docker
-
-Here’s how to build and run your frontend application using Docker:
-
----
-
-### Step 1: Build the Docker Image
-
-Use the following command to build the Docker image for your frontend:
-
-```bash
-docker build --build-arg VITE_API_URL=http://localhost:8000/api -t frontend-app   
-```
-
-Use the command to run the docker image
-```bash
-docker run -p 80:80 frontend-app
-```   
 
 ## 🤝 Test user credentials
 
@@ -216,6 +209,4 @@ Other employee | i@gmail.com         | 12345678     |
    ```
 
 2. The rest instructions are provided  [here](https://github.com/Smr0303/flagRight-Assesment/blob/ef67aff3e995bfdefdd06da9c9a3719ad06b2320/backend/SETUP_GUIDE.md)
-# VRVSecurity-Assignment
-# VRVSecurity-Assignment
-# VRV
+
