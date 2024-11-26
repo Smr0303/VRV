@@ -33,24 +33,6 @@
    npm run dev
    ```
 
-### 🚀 If Running the Backend Using Docker
-
-Follow these simple steps to build and run your backend using Docker:
-
----
-
-### Step 1: Build the Docker Image
-
-Run the following command to create a Docker image for your backend application:
-
-```bash
-docker build -t backend-app .
-   ```
-
-   ```bash
-   docker run --env-file .env -p 8000:8000 backend-app
-   ```
-
 ## The application will run using the sample env credentials if you want to setup supabase then steps are below
 
 ## 🛠 Supabase Setup
